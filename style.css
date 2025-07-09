@@ -1,32 +1,37 @@
+/* General Styles */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    background: #1a1a1a; /* Dark background for the body */
+    color: #f0f0f0; /* Light text for the body */
 }
 
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 1100px;
     margin: auto;
     overflow: hidden;
 }
 
+/* Header (Light Section) */
 header {
-    background: #333;
-    color: #fff;
-    padding: 2rem 0;
+    background: #ffffff; /* Light background for the header */
+    color: #111; /* Dark text for the header */
+    padding: 4rem 0;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
-header p {
-    font-size: 1.2rem;
+header nav {
+    margin-top: 2rem;
 }
 
 header nav ul {
@@ -36,59 +41,143 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 25px;
 }
 
 header nav a {
-    color: #fff;
+    color: #111; /* Dark nav links */
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
+header nav a:hover {
+    color: #667eea; /* Accent color on hover */
+}
+
+/* Sections (Dark Sections) */
 section {
-    padding: 2rem 0;
-    border-bottom: 1px solid #ddd;
+    padding: 5rem 0;
+    border-top: 1px solid #333; /* Border for dark theme */
 }
 
 section h2 {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff; /* Light heading text */
+}
+
+/* About Section */
+#about p {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ccc; /* Slightly dimmer light text */
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: #2c2c2c; /* Dark card background */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.skill-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #8a9cff; /* Light accent color for headings */
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* Projects Section */
+.project-category-section {
+    margin-bottom: 4rem;
+}
+
+.project-category-section h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 #projects .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
 }
 
 .project-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 1rem;
-    text-align: center;
+    background: #2c2c2c; /* Dark card background */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    padding: 2rem;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card h3 {
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.project-card h4 {
     margin-top: 0;
+    font-size: 1.5rem;
+    color: #f0f0f0; /* Light text */
 }
 
 .project-card a {
     text-decoration: none;
-    color: #333;
+    color: #8a9cff; /* Light accent color */
+    font-weight: 500;
 }
 
-.project-card a:hover {
-    color: #007BFF;
+/* Contact Section */
+#contact {
+    text-align: center;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    color: #ccc;
 }
 
 #contact a {
-    color: #333;
+    color: #8a9cff; /* Light accent color */
+    text-decoration: none;
+    font-weight: 500;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem 0;
-    background: #333;
-    color: #fff;
+    color: #777;
 }
