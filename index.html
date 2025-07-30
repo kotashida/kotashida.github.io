@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kota Shida - Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Kota Shida</h1>
-            
+            <div class="header-content">
+                <h1>Kota Shida</h1>
+                <div class="social-links">
+                    <a href="https://github.com/kotashida" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub"></a>
+                    <a href="https://linkedin.com/in/kotashida" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn"></a>
+                </div>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
@@ -33,12 +38,15 @@
     <section id="projects">
         <div class="container">
             <h2>Projects</h2>
-            <div class="project-card">
-                <h3>Credit Risk Default Prediction</h3>
-                <p>Developed a machine learning model to predict loan defaults using the Lending Club dataset. The model identifies key risk indicators to help financial institutions make informed lending decisions. The project involved data cleaning, feature engineering, and a RandomForestClassifier, achieving 98.9% accuracy.</p>
-                <a href="https://github.com/kotashida/loan_default_prediction" target="_blank">View on GitHub</a>
+            <div class="tabs">
+                <button class="tab-button active" data-category="Machine Learning">Machine Learning</button>
+                <button class="tab-button" data-category="Quantitative Finance">Quantitative Finance</button>
+                <button class="tab-button" data-category="Software Engineering">Software Engineering</button>
+                <button class="tab-button" data-category="Geospatial Analysis">Geospatial Analysis</button>
             </div>
-            <!-- Projects will be dynamically added here -->
+            <div id="project-grid-container" class="project-grid">
+                <!-- Project cards will be dynamically inserted here -->
+            </div>
         </div>
     </section>
 
@@ -47,44 +55,34 @@
             <h2>Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Programming & Databases</h3>
+                    <h3>Programming & Libraries</h3>
                     <ul>
-                        <li>Python (Pandas, NumPy, Scikit-learn, Matplotlib)</li>
-                        <li>R</li>
-                        <li>SQL</li>
+                        <li><strong>Languages:</strong> Python, R, SQL</li>
+                        <li><strong>Data Science & ML:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, Keras, SciPy, Matplotlib, Seaborn, Imbalanced-learn</li>
+                        <li><strong>Specialized Libraries:</strong> FastAPI, GeoPandas, Folium, OSMnx, yfinance</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Quantitative Methods</h3>
+                    <h3>Quantitative & Data Analysis</h3>
                     <ul>
-                        <li>Machine Learning</li>
-                        <li>Statistical Modeling</li>
-                        <li>Time-Series Econometrics</li>
-                        <li>Stochastic Processes</li>
-                        <li>Natural Language Processing (NLP)</li>
+                        <li><strong>Machine Learning:</strong> Predictive Modeling, Time-Series Forecasting, Classification, Clustering, NLP, Feature Engineering</li>
+                        <li><strong>Quantitative Finance:</strong> Algorithmic Trading, Backtesting, Portfolio Optimization (MVO, HRP), Monte Carlo Simulation, Risk Management</li>
+                        <li><strong>Geospatial Analysis:</strong> Interactive Mapping, GTFS Data Processing, Heatmaps</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Tools & Technologies</h3>
+                    <h3>Software Engineering & DevOps</h3>
                     <ul>
-                        <li>Git/Version Control</li>
-                        <li>Linux/Unix Environment</li>
-                        <li>Jupyter Notebooks</li>
-                        <li>Docker</li>
+                        <li><strong>Architecture:</strong> REST APIs, Microservices, Asynchronous Data Pipelines, Message Queues (RabbitMQ)</li>
+                        <li><strong>Tools:</strong> Git, Docker, Docker Compose, Jupyter Notebooks</li>
+                        <li><strong>Principles:</strong> Object-Oriented Programming, Containerization</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Certifications</h3>
+                    <h3>Languages & Certifications</h3>
                     <ul>
-                        <li>Google Data Analytics Professional Certificate</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Languages</h3>
-                    <ul>
-                        <li>English (Native)</li>
-                        <li>Japanese (Native)</li>
-                        <li>Korean (Intermediate)</li>
+                        <li><strong>Human Languages:</strong> English (Native), Japanese (Native), Korean (Intermediate)</li>
+                        <li><strong>Certifications:</strong> Google Data Analytics Professional Certificate</li>
                     </ul>
                 </div>
             </div>

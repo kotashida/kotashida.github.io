@@ -25,36 +25,39 @@ document.addEventListener('DOMContentLoaded', function() {
             category: 'Machine Learning'
         },
         {
+            name: 'Credit Risk Default Prediction',
+            description: 'A machine learning model to predict loan defaults using the Lending Club dataset.',
+            url: 'https://github.com/kotashida/loan_default_prediction',
+            category: 'Machine Learning'
+        },
+        {
+            name: 'Predictive Maintenance for Energy Equipment',
+            description: 'A model to predict equipment failure using sensor data for predictive maintenance.',
+            url: 'https://github.com/kotashida/predictive_maintenance_energy_equipment',
+            category: 'Machine Learning'
+        },
+        {
             name: 'LA Transit Accessibility',
             description: 'A Python project to analyze and visualize transit accessibility in Los Angeles County.',
             url: 'https://github.com/kotashida/la-transit-accessibility',
             category: 'Geospatial Analysis'
+        },
+        {
+            name: 'Scalable Data Pipeline API',
+            description: 'A scalable, asynchronous data ingestion pipeline using FastAPI and RabbitMQ.',
+            url: 'https://github.com/kotashida/scalable_data_pipeline_api',
+            category: 'Software Engineering'
         }
     ];
 
-    const projectContainer = document.querySelector('#projects .container');
+    const projectContainer = document.getElementById('project-grid-container');
+    const tabs = document.querySelectorAll('.tab-button');
 
-    // Group projects by category
-    const categorizedProjects = projects.reduce((acc, project) => {
-        (acc[project.category] = acc[project.category] || []).push(project);
-        return acc;
-    }, {});
+    function displayProjects(category) {
+        projectContainer.innerHTML = '';
+        const filteredProjects = projects.filter(p => p.category === category);
 
-    // Clear existing content before adding new categories
-    projectContainer.innerHTML = '<h2>Projects</h2>';
-
-    for (const category in categorizedProjects) {
-        const categorySection = document.createElement('div');
-        categorySection.classList.add('project-category-section');
-
-        const categoryTitle = document.createElement('h3');
-        categoryTitle.textContent = category;
-        categorySection.appendChild(categoryTitle);
-
-        const projectGrid = document.createElement('div');
-        projectGrid.classList.add('project-grid');
-
-        categorizedProjects[category].forEach(project => {
+        filteredProjects.forEach(project => {
             const projectCard = document.createElement('div');
             projectCard.classList.add('project-card');
 
@@ -73,9 +76,29 @@ document.addEventListener('DOMContentLoaded', function() {
             projectCard.appendChild(projectDescription);
             projectCard.appendChild(projectLink);
 
-            projectGrid.appendChild(projectCard);
+            projectContainer.appendChild(projectCard);
         });
-        categorySection.appendChild(projectGrid);
-        projectContainer.appendChild(categorySection);
     }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            displayProjects(tab.dataset.category);
+        });
+    });
+
+    // Initial display
+    displayProjects('Machine Learning');
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('header nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 });
