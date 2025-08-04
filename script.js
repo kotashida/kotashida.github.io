@@ -43,9 +43,27 @@ document.addEventListener('DOMContentLoaded', function() {
             category: 'Geospatial Analysis'
         },
         {
+            name: 'Geospatial Analysis of U.S. Power Plants',
+            description: 'Analyzes the distribution and capacity of power plants across the United States, generating an interactive map and a bar chart that visualize the density of power plants by state.',
+            url: 'https://github.com/kotashida/geospatial_analysis_energy_infrastructure',
+            category: 'Geospatial Analysis'
+        },
+        {
             name: 'Scalable Data Pipeline API',
             description: 'A scalable, asynchronous data ingestion pipeline using FastAPI and RabbitMQ.',
             url: 'https://github.com/kotashida/scalable_data_pipeline_api',
+            category: 'Software Engineering'
+        },
+        {
+            name: 'Data Quality Governance',
+            description: 'A project that establishes a data quality governance framework by profiling, cleaning, and generating reports on data quality.',
+            url: 'https://github.com/kotashida/data_quality_governance',
+            category: 'Software Engineering'
+        },
+        {
+            name: 'Stock Market Dashboard',
+            description: 'A web-based dashboard for monitoring stock market data, including price trends, volume, and key financial metrics.',
+            url: 'https://github.com/kotashida/stock_market_dashboard',
             category: 'Software Engineering'
         }
     ];
