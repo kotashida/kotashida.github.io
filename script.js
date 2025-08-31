@@ -19,6 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
             category: 'Quantitative Finance'
         },
         {
+            name: 'Energy Risk Forecasting with GARCH Models',
+            description: 'A risk management tool to forecast Value at Risk (VaR) for energy commodities using GARCH models, presented in an interactive Dash dashboard.',
+            url: 'https://github.com/kotashida/energy_risk_forecast',
+            category: 'Quantitative Finance'
+        },
+        {
             name: 'USD/JPY Predictor',
             description: 'A machine learning model to predict the USD/JPY exchange rate.',
             url: 'https://github.com/kotashida/usdjpy_predictor',
@@ -34,6 +40,18 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Predictive Maintenance for Energy Equipment',
             description: 'A model to predict equipment failure using sensor data for predictive maintenance.',
             url: 'https://github.com/kotashida/predictive_maintenance_energy_equipment',
+            category: 'Machine Learning'
+        },
+        {
+            name: 'Fine-Tuning BERT for Financial Document Classification',
+            description: 'Fine-tuning a BERT model to classify financial documents by sentiment, covering the entire workflow from data preprocessing to model training and evaluation.',
+            url: 'https://github.com/kotashida/fine_tuning_financial_documents',
+            category: 'Machine Learning'
+        },
+        {
+            name: 'NBA Win Probability Tracker for OKC Thunder',
+            description: 'A real-time win probability tracker for OKC Thunder games that fetches live play-by-play data and uses a logistic regression model to visualize win probability.',
+            url: 'https://github.com/kotashida/thunder_win_probability',
             category: 'Machine Learning'
         },
         {
