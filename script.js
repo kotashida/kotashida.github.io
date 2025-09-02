@@ -83,6 +83,12 @@ document.addEventListener('DOMContentLoaded', function() {
             description: 'A web-based dashboard for monitoring stock market data, including price trends, volume, and key financial metrics.',
             url: 'https://github.com/kotashida/stock_market_dashboard',
             category: 'Software Engineering'
+        },
+        {
+            name: 'NYC 311 Interpreter Wait Times',
+            description: 'An automated pipeline that ingests NYC 311 interpreter wait-time and service request datasets, validates and standardizes the data, and produces a weekly Excel KPI workbook and an auto-generated PowerPoint deck to highlight service equity and access gaps.',
+            url: 'https://github.com/kotashida/nyc_311_interpreter_wait_times',
+            category: 'Software Engineering'
         }
     ];
 
