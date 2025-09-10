@@ -1,6 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     const projects = [
         {
+            name: 'Wikipedia Sentiment Analysis',
+            description: 'A quantitative analysis of sentiment across Wikipedia articles about U.S. presidents in multiple languages. It aims to uncover potential correlations between the sentiment expressed in these articles and the perceived favorability of the U.S. in different countries, as measured by public opinion polls.',
+            url: 'https://github.com/kotashida/wikipedia_sentiment_analysis',
+            category: 'Machine Learning'
+        },
+        {
+            name: 'Secure IoT Telemetry Pipeline',
+            description: 'A secure, containerized, end-to-end pipeline for ingesting, validating, and analyzing high-volume IoT telemetry data from a fleet of drones. The system is designed with robust security, real-time processing, and quantitative analysis at its core, demonstrating a practical application of data engineering and statistical monitoring.',
+            url: 'https://github.com/kotashida/secure_iot_telemetry_pipeline',
+            category: 'Software Engineering'
+        },
+        {
             name: 'Arbitrage Pairs Trading',
             description: 'A Python-based backtesting engine for pairs trading strategies on the S&P 500.',
             url: 'https://github.com/kotashida/arbitrage_pairs_trading',
@@ -50,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             name: 'NBA Win Probability Tracker for OKC Thunder',
-            description: 'A real-time win probability tracker for OKC Thunder games that fetches live play-by-play data and uses a logistic regression model to visualize win probability.',
+.            description: 'A real-time win probability tracker for OKC Thunder games that fetches live play-by-play data and uses a logistic regression model to visualize win probability.',
             url: 'https://github.com/kotashida/thunder_win_probability',
             category: 'Machine Learning'
         },
