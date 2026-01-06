@@ -4,7 +4,7 @@ This repository contains the source code for my personal portfolio website, host
 
 ## About
 
-This portfolio showcases my projects in the fields of data science, machine learning, quantitative finance, and software engineering. It also provides an overview of my skills and experience.
+This portfolio showcases my projects. It also provides an overview of my skills and experience.
 
 ## Live Site
 
