@@ -1,106 +1,112 @@
 document.addEventListener('DOMContentLoaded', function() {
     const projects = [
         {
+            name: 'Mining Misconceptions: NLP-Based Detection',
+            description: 'A natural language processing pipeline that mines mathematics forums to identify, cluster, and quantify student misconceptions using BERTopic and semantic depth classification.',
+            url: 'https://github.com/kotashida/nlp_cognitive_obstacles',
+            category: 'Natural Language Processing'
+        },
+        {
             name: 'Wikipedia Sentiment Analysis',
-            description: 'A quantitative analysis of sentiment across Wikipedia articles about U.S. presidents in multiple languages. It aims to uncover potential correlations between the sentiment expressed in these articles and the perceived favorability of the U.S. in different countries, as measured by public opinion polls.',
+            description: 'A multi-language sentiment analysis of Wikipedia articles on U.S. presidents, correlating linguistic sentiment with global public opinion polls.',
             url: 'https://github.com/kotashida/wikipedia_sentiment_analysis',
-            category: 'Machine Learning'
+            category: 'Natural Language Processing'
+        },
+        {
+            name: 'Fine-Tuning BERT for Financial Document Classification',
+            description: 'A fine-tuned BERT model for classifying the sentiment of financial documents, demonstrating an end-to-end NLP workflow.',
+            url: 'https://github.com/kotashida/fine_tuning_financial_documents',
+            category: 'Natural Language Processing'
         },
         {
             name: 'Secure IoT Telemetry Pipeline',
-            description: 'A secure, containerized, end-to-end pipeline for ingesting, validating, and analyzing high-volume IoT telemetry data from a fleet of drones. The system is designed with robust security, real-time processing, and quantitative analysis at its core, demonstrating a practical application of data engineering and statistical monitoring.',
+            description: 'A containerized, end-to-end data engineering pipeline for ingesting, validating, and analyzing high-volume drone telemetry with robust security and real-time monitoring.',
             url: 'https://github.com/kotashida/secure_iot_telemetry_pipeline',
-            category: 'Software Engineering'
+            category: 'Data Engineering & Systems'
         },
         {
             name: 'Arbitrage Pairs Trading',
-            description: 'A Python-based backtesting engine for pairs trading strategies on the S&P 500.',
+            description: 'An algorithmic backtesting engine that identifies and executes mean-reversion strategies on correlated S&P 500 stock pairs.',
             url: 'https://github.com/kotashida/arbitrage_pairs_trading',
             category: 'Quantitative Finance'
         },
         {
             name: 'Asian Options Monte Carlo',
-            description: 'A Python script to price Asian options using Monte Carlo simulation.',
+            description: 'A Monte Carlo simulation tool for pricing Asian options, utilizing control variates to enhance computational efficiency and accuracy.',
             url: 'https://github.com/kotashida/asian_options_monte_carlo',
             category: 'Quantitative Finance'
         },
         {
             name: 'MVO/HRP Comparison',
-            description: 'A Python project comparing Mean-Variance Optimization and Hierarchical Risk Parity.',
+            description: 'A comparative study analyzing risk-adjusted returns between traditional Mean-Variance Optimization and Hierarchical Risk Parity portfolio construction techniques.',
             url: 'https://github.com/kotashida/mvo_hrp_comparison',
             category: 'Quantitative Finance'
         },
         {
             name: 'Energy Risk Forecasting with GARCH Models',
-            description: 'A risk management tool to forecast Value at Risk (VaR) for energy commodities using GARCH models, presented in an interactive Dash dashboard.',
+            description: 'An interactive risk management dashboard forecasting Value at Risk (VaR) for energy commodities using volatility-clustering GARCH models.',
             url: 'https://github.com/kotashida/energy_risk_forecast',
             category: 'Quantitative Finance'
         },
         {
             name: 'USD/JPY Predictor',
-            description: 'A machine learning model to predict the USD/JPY exchange rate.',
+            description: 'A machine learning forecasting model predicting USD/JPY exchange rates using historical price data and technical indicators.',
             url: 'https://github.com/kotashida/usdjpy_predictor',
             category: 'Machine Learning'
         },
         {
             name: 'Credit Risk Default Prediction',
-            description: 'A machine learning model to predict loan defaults using the Lending Club dataset.',
+            description: 'A classification model predicting loan default probabilities using the Lending Club dataset to optimize credit risk assessment.',
             url: 'https://github.com/kotashida/loan_default_prediction',
             category: 'Machine Learning'
         },
         {
             name: 'Predictive Maintenance for Energy Equipment',
-            description: 'A model to predict equipment failure using sensor data for predictive maintenance.',
+            description: 'A failure prediction system leveraging sensor data to forecast equipment breakdowns and optimize maintenance schedules in the energy sector.',
             url: 'https://github.com/kotashida/predictive_maintenance_energy_equipment',
             category: 'Machine Learning'
         },
         {
-            name: 'Fine-Tuning BERT for Financial Document Classification',
-            description: 'Fine-tuning a BERT model to classify financial documents by sentiment, covering the entire workflow from data preprocessing to model training and evaluation.',
-            url: 'https://github.com/kotashida/fine_tuning_financial_documents',
-            category: 'Machine Learning'
-        },
-        {
             name: 'NBA Win Probability Tracker for OKC Thunder',
-.            description: 'A real-time win probability tracker for OKC Thunder games that fetches live play-by-play data and uses a logistic regression model to visualize win probability.',
+            description: 'A real-time logistic regression model visualizing win probabilities for OKC Thunder games using live play-by-play data.',
             url: 'https://github.com/kotashida/thunder_win_probability',
             category: 'Machine Learning'
         },
         {
             name: 'LA Transit Accessibility',
-            description: 'A Python project to analyze and visualize transit accessibility in Los Angeles County.',
+            description: 'A geospatial analysis tool visualizing public transit accessibility gaps across Los Angeles County using GTFS and census data.',
             url: 'https://github.com/kotashida/la-transit-accessibility',
             category: 'Geospatial Analysis'
         },
         {
             name: 'Geospatial Analysis of U.S. Power Plants',
-            description: 'Analyzes the distribution and capacity of power plants across the United States, generating an interactive map and a bar chart that visualize the density of power plants by state.',
+            description: 'An interactive visualization mapping the distribution and generation capacity of power infrastructure across the United States.',
             url: 'https://github.com/kotashida/geospatial_analysis_energy_infrastructure',
             category: 'Geospatial Analysis'
         },
         {
             name: 'Scalable Data Pipeline API',
-            description: 'A scalable, asynchronous data ingestion pipeline using FastAPI and RabbitMQ.',
+            description: 'An asynchronous, high-throughput data ingestion API built with FastAPI and RabbitMQ for reliable message processing.',
             url: 'https://github.com/kotashida/scalable_data_pipeline_api',
-            category: 'Software Engineering'
+            category: 'Data Engineering & Systems'
         },
         {
             name: 'Data Quality Governance',
-            description: 'A project that establishes a data quality governance framework by profiling, cleaning, and generating reports on data quality.',
+            description: 'A comprehensive framework for automated data profiling, cleaning, and quality reporting to ensure data integrity.',
             url: 'https://github.com/kotashida/data_quality_governance',
-            category: 'Software Engineering'
+            category: 'Data Engineering & Systems'
         },
         {
             name: 'Stock Market Dashboard',
-            description: 'A web-based dashboard for monitoring stock market data, including price trends, volume, and key financial metrics.',
+            description: 'A real-time financial dashboard tracking stock prices, trading volumes, and key market metrics with interactive visualizations.',
             url: 'https://github.com/kotashida/stock_market_dashboard',
-            category: 'Software Engineering'
+            category: 'Data Engineering & Systems'
         },
         {
             name: 'NYC 311 Interpreter Wait Times',
-            description: 'An automated pipeline that ingests NYC 311 interpreter wait-time and service request datasets, validates and standardizes the data, and produces a weekly Excel KPI workbook and an auto-generated PowerPoint deck to highlight service equity and access gaps.',
+            description: 'An automated ETL pipeline that standardizes NYC 311 data to generate weekly KPI reports highlighting service equity gaps.',
             url: 'https://github.com/kotashida/nyc_311_interpreter_wait_times',
-            category: 'Software Engineering'
+            category: 'Data Engineering & Systems'
         }
     ];
 
@@ -146,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
     displayProjects('Machine Learning');
 
     // Smooth scrolling for navigation links
-    document.querySelectorAll('header nav a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
@@ -155,4 +161,21 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // Scroll Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
 });
