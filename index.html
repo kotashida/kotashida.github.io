@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kota Shida - Data Scientist & Developer</title>
+    <title>Kota Shida | Data Portfolio</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,10 +11,10 @@
     <nav>
         <div class="container">
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="nav-tab active" data-target="home">Home</a></li>
+                <li><a href="#" class="nav-tab" data-target="projects">Projects</a></li>
+                <li><a href="#" class="nav-tab" data-target="skills">Skills</a></li>
+                <li><a href="#" class="nav-tab" data-target="contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -22,7 +22,7 @@
     <header>
         <div class="container hero-content">
             <h1>Kota Shida</h1>
-            <p class="tagline">Extracting insights from data. Building scalable systems. Innovating with code.</p>
+            <p class="tagline">Modeling complex systems and extracting insights to solve problems with data.</p>
             <div class="social-links">
                 <a href="https://github.com/kotashida" target="_blank" title="GitHub"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub"></a>
                 <a href="https://linkedin.com/in/kotashida" target="_blank" title="LinkedIn"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn"></a>
@@ -33,13 +33,12 @@
     <section id="about" class="hidden">
         <div class="container">
             <h2>About Me</h2>
-            <p>I am a Statistics and Data Science student at UCLA, specializing in machine learning, statistical modeling, and full-stack development. I build scalable systems and derive actionable insights from complex data, bridging the gap between rigorous analysis and real-world application.</p>
+            <p>I am majoring in Statistics and Data Science at UCLA. My work sits at the intersection of quantitative finance, machine learning, and geospatial analysis. I am passionate about applying statistical rigor to build data-driven solutions with real-world impact.</p>
         </div>
     </section>
 
     <section id="projects" class="hidden">
         <div class="container">
-            <h2>Projects</h2>
             <div class="tabs">
                 <button class="tab-button active" data-category="Machine Learning">Machine Learning</button>
                 <button class="tab-button" data-category="Natural Language Processing">Natural Language Processing</button>
@@ -55,12 +54,11 @@
 
     <section id="skills" class="hidden">
         <div class="container">
-            <h2>Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
                     <h3>Programming & Core Technologies</h3>
                     <ul>
-                        <li><strong>Languages:</strong> Python, R, SQL</li>
+                        <li><strong>Languages:</strong> Python, R, SQL (Advanced: CTEs, Window Functions)</li>
                         <li><strong>Version Control:</strong> Git, GitHub</li>
                         <li><strong>Development Tools:</strong> Jupyter Notebooks, VS Code</li>
                         <li><strong>Cloud & DevOps:</strong> Docker, Docker Compose</li>
@@ -70,21 +68,22 @@
                     <h3>Data Science & Machine Learning</h3>
                     <ul>
                         <li><strong>Data Manipulation:</strong> Pandas, NumPy</li>
-                        <li><strong>Data Visualization:</strong> Matplotlib, Seaborn, Plotly, Dash, Grafana</li>
-                        <li><strong>Statistical Modeling:</strong> SciPy, Statsmodels, arch</li>
-                        <li><strong>Machine Learning:</strong> Scikit-learn (Regression, Classification, Clustering), HDBSCAN, UMAP</li>
+                        <li><strong>Data Visualization:</strong> Matplotlib, Seaborn, Plotly, Dash, Streamlit, Grafana</li>
+                        <li><strong>Statistical Modeling:</strong> SciPy, Statsmodels, Causal Inference (Difference-in-Differences)</li>
+                        <li><strong>Machine Learning:</strong> Scikit-learn, HDBSCAN, UMAP</li>
+                        <li><strong>Generative AI:</strong> Retrieval-Augmented Generation (RAG), AI Agents (LangChain), Vector Search (FAISS)</li>
                         <li><strong>Deep Learning:</strong> TensorFlow, Keras, PyTorch, Hugging Face Transformers</li>
                         <li><strong>Natural Language Processing (NLP):</strong> Sentiment Analysis, Topic Modeling (BERTopic), Transformers</li>
-                        <li><strong>MLOps:</strong> Weights & Biases, Model Training Pipelines, Predictive Maintenance</li>
+                        <li><strong>MLOps:</strong> Weights & Biases, Model Training Pipelines</li>
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3>Quantitative Finance & Analytics</h3>
                     <ul>
-                        <li><strong>Financial Modeling:</strong> Monte Carlo Simulation, Option Pricing, Risk Management</li>
-                        <li><strong>Portfolio Optimization:</strong> Mean-Variance Optimization (MVO), Hierarchical Risk Parity (HRP)</li>
-                        <li><strong>Algorithmic Trading:</strong> Backtesting, Pairs Trading, Time-Series Forecasting</li>
-                        <li><strong>Data Sources:</strong> yfinance, Financial APIs</li>
+                        <li><strong>Financial Modeling:</strong> Monte Carlo Simulation, Option Pricing, Risk Management (VaR), EVM</li>
+                        <li><strong>Portfolio Optimization:</strong> MVO, Hierarchical Risk Parity (HRP)</li>
+                        <li><strong>Analysis:</strong> Web3 & RWA Analysis, Algorithmic Trading, Time-Series Forecasting (GARCH)</li>
+                        <li><strong>Data Sources:</strong> yfinance, ccxt, Financial APIs</li>
                     </ul>
                 </div>
                 <div class="skill-card">
@@ -92,18 +91,17 @@
                     <ul>
                         <li><strong>GIS Libraries:</strong> GeoPandas, Folium, OSMnx, GTFS-Kit</li>
                         <li><strong>Spatial Data:</strong> GeoJSON, Shapefiles, GTFS Data</li>
-                        <li><strong>Techniques:</strong> Interactive Mapping, Spatial Joins, Geocoding, Heatmap Generation, Network Analysis</li>
+                        <li><strong>Techniques:</strong> Interactive Mapping, Spatial Joins, Geocoding, Network Analysis</li>
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3>Software Engineering & Data Engineering</h3>
                     <ul>
-                        <li><strong>API Development:</strong> FastAPI, RESTful APIs, Requests</li>
-                        <li><strong>Web Development:</strong> Dash, HTML/CSS</li>
+                        <li><strong>API Development:</strong> FastAPI, RESTful APIs, Web3.py</li>
                         <li><strong>System Design:</strong> Microservices, Data Pipelines, Message Queues (RabbitMQ, MQTT)</li>
-                        <li><strong>Databases:</strong> InfluxDB, Prometheus</li>
+                        <li><strong>Databases:</strong> InfluxDB, Prometheus, SQLite</li>
                         <li><strong>Data Governance:</strong> Data Cleaning, Data Profiling, Data Quality Reporting, Parquet</li>
-                        <li><strong>Data Acquisition & Automation:</strong> Web Scraping (BeautifulSoup), Excel/PPT Report Generation</li>
+                        <li><strong>Automation:</strong> Web Scraping (BeautifulSoup), Report Generation</li>
                     </ul>
                 </div>
                 <div class="skill-card">
@@ -119,12 +117,19 @@
 
     <section id="contact" class="hidden">
         <div class="container">
-            <h2>Contact</h2>
-            <p><a href="mailto:shidak975@gmail.com">shidak975@gmail.com</a> | (408) 781-7012 | Los Angeles, CA</p>
-            <p style="margin-top: 1rem;">
-                <a href="https://github.com/kotashida" target="_blank" style="margin: 0 10px;">GitHub</a>
-                <a href="https://linkedin.com/in/kotashida" target="_blank" style="margin: 0 10px;">LinkedIn</a>
-            </p>
+            <h2 style="font-size: 3rem; margin-bottom: 2rem;">Let's Connect</h2>
+            <div class="contact-content" style="font-size: 1.2rem; line-height: 2;">
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+                <div style="margin: 2rem 0;">
+                    <p><strong>Email:</strong> <a href="mailto:shidak975@gmail.com" style="color: var(--accent-color);">shidak975@gmail.com</a></p>
+                    <p><strong>Phone:</strong> (408) 781-7012</p>
+                    <p><strong>Location:</strong> Los Angeles, CA</p>
+                </div>
+                <div class="social-links" style="margin-top: 1rem;">
+                    <a href="https://github.com/kotashida" target="_blank" title="GitHub"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub"></a>
+                    <a href="https://linkedin.com/in/kotashida" target="_blank" title="LinkedIn"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn"></a>
+                </div>
+            </div>
         </div>
     </section>
 

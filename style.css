@@ -7,7 +7,7 @@
     --accent-color: #38bdf8;
     --accent-glow: rgba(56, 189, 248, 0.5);
     --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-    --nav-bg: rgba(15, 23, 42, 0.8);
+    --nav-bg: rgba(15, 23, 42, 0.95);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -18,7 +18,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 }
 
 body {
@@ -33,6 +33,7 @@ body {
     background-attachment: fixed;
     color: var(--text-primary);
     overflow-x: hidden;
+    padding-top: 80px;
 }
 
 /* Custom Scrollbar */
@@ -59,12 +60,12 @@ body {
 
 /* Header & Navigation */
 header {
-    height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
-    padding-top: 60px; /* Offset for fixed nav */
+    padding-top: 15vh; /* Raised from 20vh */
 }
 
 nav {
@@ -93,6 +94,7 @@ nav a {
     font-size: 1.1rem;
     transition: var(--transition);
     position: relative;
+    padding-bottom: 5px;
 }
 
 nav a:hover, nav a.active {
@@ -104,39 +106,41 @@ nav a::after {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     background: var(--gradient-primary);
     transition: var(--transition);
 }
 
-nav a:hover::after {
+nav a:hover::after, nav a.active::after {
     width: 100%;
 }
 
 /* Hero Section */
 .hero-content {
     text-align: center;
-    animation: fadeInUp 1s ease-out;
 }
 
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 5rem;
     font-weight: 800;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -2px;
     line-height: 1.1;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .tagline {
     font-size: 1.5rem;
     color: var(--text-secondary);
-    max-width: 600px;
+    max-width: 1000px;
     margin: 0 auto 2rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
 }
 
 .social-links {
@@ -144,6 +148,8 @@ h1 {
     justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.8s forwards;
 }
 
 .social-links a img {
@@ -160,18 +166,19 @@ h1 {
 
 /* Section Headings */
 section {
-    padding: 6rem 0;
+    padding: 3rem 0 4rem; /* Reduced from 4rem */
     position: relative;
+    display: none;
 }
 
 section h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
     text-align: center;
-    margin: 0 auto 3rem; /* Centered with margin */
+    margin: 0 auto 3rem; 
     color: var(--text-primary);
     position: relative;
-    display: table; /* Allows width to fit content */
+    display: table;
 }
 
 section h2::after {
@@ -185,6 +192,10 @@ section h2::after {
 }
 
 /* About Section */
+#about {
+    padding: 0 0 4rem;
+}
+
 #about p {
     font-size: 1.25rem;
     color: var(--text-secondary);
@@ -197,42 +208,43 @@ section h2::after {
 /* Projects Section */
 .tabs {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: flex-start; /* Aligns to start for better scroll experience */
+    @media (min-width: 1024px) {
+        justify-content: center;
+    }
+    flex-wrap: nowrap;
+    gap: 0.75rem;
     margin-bottom: 3rem;
-}
-/* ... existing styles ... */
-
-/* Contact Section */
-#contact {
-    text-align: center;
-    background: linear-gradient(to top, rgba(15, 23, 42, 1), transparent);
+    overflow-x: auto;
+    padding-bottom: 10px;
+    padding-top: 10px; /* Added to prevent hover clip */
+    -webkit-overflow-scrolling: touch;
 }
 
-#contact .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Hide scrollbar for Chrome, Safari and Opera */
+.tabs::-webkit-scrollbar {
+    display: none;
 }
 
-#contact p {
-    color: var(--text-secondary);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+/* Hide scrollbar for IE, Edge and Firefox */
+.tabs {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .tab-button {
     background: transparent;
     color: var(--text-secondary);
     border: 1px solid var(--card-border);
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
     font-weight: 600;
     border-radius: 50px;
     cursor: pointer;
     transition: var(--transition);
     font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .tab-button:hover {
@@ -309,8 +321,8 @@ section h2::after {
 /* Skills Section */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
 }
 
 .skill-card {
@@ -342,23 +354,29 @@ section h2::after {
 }
 
 .skill-card li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.25rem;
     color: var(--text-secondary);
     font-size: 0.95rem;
-    display: flex;
-    align-items: baseline;
+    line-height: 1.5;
 }
 
 .skill-card li strong {
     color: var(--text-primary);
-    margin-right: 0.5rem;
-    min-width: 100px;
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
 }
 
 /* Contact Section */
 #contact {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     text-align: center;
-    background: linear-gradient(to top, rgba(15, 23, 42, 1), transparent);
+    background: transparent;
+    padding-top: 15vh; /* Raised from 20vh */
 }
 
 #contact a {
@@ -380,6 +398,10 @@ footer {
     color: var(--text-secondary);
     font-size: 0.9rem;
     border-top: 1px solid var(--card-border);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: none;
 }
 
 /* Animations */
@@ -394,15 +416,13 @@ footer {
     }
 }
 
-.hidden {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
 }
 
-.show {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive */
@@ -413,7 +433,7 @@ footer {
     
     header {
         height: auto;
-        padding: 8rem 0 4rem;
+        padding: 4rem 0;
     }
     
     nav ul {

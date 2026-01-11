@@ -1,5 +1,86 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // --- Main Navigation Tab Logic ---
+    const navTabs = document.querySelectorAll('.nav-tab');
+    const heroSection = document.querySelector('header');
+    const aboutSection = document.getElementById('about');
+    const projectsSection = document.getElementById('projects');
+    const skillsSection = document.getElementById('skills');
+    const contactSection = document.getElementById('contact');
+
+    // Grouping views for easy management
+    const views = {
+        'home': [heroSection, aboutSection],
+        'projects': [projectsSection],
+        'skills': [skillsSection],
+        'contact': [contactSection]
+    };
+
+    function switchTab(targetId) {
+        // 1. Hide all views
+        Object.values(views).flat().forEach(el => {
+            el.style.display = 'none';
+            el.classList.remove('fade-in'); // Reset animation
+        });
+
+        // 2. Show target view
+        const targetElements = views[targetId];
+        targetElements.forEach(el => {
+            el.style.display = 'block';
+            // Use setTimeout to allow display:block to apply before opacity transition
+            setTimeout(() => el.classList.add('fade-in'), 10);
+        });
+
+        // 3. Update Nav Active State
+        navTabs.forEach(tab => {
+            if (tab.dataset.target === targetId) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+
+        // 4. Reset Scroll
+        window.scrollTo(0, 0);
+    }
+
+    navTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            switchTab(tab.dataset.target);
+        });
+    });
+
+    // Initialize View (Show Home, Hide others)
+    // We manually hide others first to ensure clean start
+    Object.values(views).flat().forEach(el => el.style.display = 'none');
+    switchTab('home');
+
+    // --- Existing Project Filtering Logic ---
     const projects = [
+        {
+            name: 'Enterprise IT Portfolio Risk Dashboard',
+            description: 'A quantitative risk analytics framework evaluating the U.S. Federal IT Portfolio using Earned Value Management (EVM) and stochastic simulation to identify capital at risk.',
+            url: 'https://github.com/kotashida/federal_it_risk_dashboard',
+            category: 'Quantitative Finance'
+        },
+        {
+            name: 'MLB Stats Intelligence: Local RAG System',
+            description: 'A privacy-first, local Retrieval-Augmented Generation (RAG) system for querying high-dimensional Major League Baseball statistics using Vector Search and Quantized LLMs.',
+            url: 'https://github.com/kotashida/mlb_stats_rag',
+            category: 'Natural Language Processing'
+        },
+        {
+            name: 'Causal Impact Analysis: Public Transit & Employment',
+            description: 'A quasi-experimental study using Difference-in-Differences (DiD) to estimate the causal impact of the 2016 Seattle Link Light Rail extension on local employment density.',
+            url: 'https://github.com/kotashida/public_transit_employment_rate',
+            category: 'Geospatial Analysis'
+        },
+        {
+            name: 'Generative AI Agent for Quantitative Web3 Analysis',
+            description: 'An autonomous AI agent performing real-time quantitative analysis and security auditing for Real-World Assets (RWAs) and Web3 tokens using LLMs and market data.',
+            url: 'https://github.com/kotashida/quantitative_analysis_ai_agent',
+            category: 'Quantitative Finance'
+        },
         {
             name: 'Mining Misconceptions: NLP-Based Detection',
             description: 'A natural language processing pipeline that mines mathematics forums to identify, cluster, and quantify student misconceptions using BERTopic and semantic depth classification.',
@@ -73,8 +154,8 @@ document.addEventListener('DOMContentLoaded', function() {
             category: 'Machine Learning'
         },
         {
-            name: 'LA Transit Accessibility',
-            description: 'A geospatial analysis tool visualizing public transit accessibility gaps across Los Angeles County using GTFS and census data.',
+            name: 'Los Angeles Public Transit Accessibility Analysis',
+            description: 'A geospatial analysis tool utilizing GTFS data and OpenStreetMap to visualize public transit service intensity and spatial accessibility gaps across Los Angeles County.',
             url: 'https://github.com/kotashida/la-transit-accessibility',
             category: 'Geospatial Analysis'
         },
@@ -97,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
             category: 'Data Engineering & Systems'
         },
         {
-            name: 'Stock Market Dashboard',
+            name: 'Stock Market Analysis Dashboard',
             description: 'A real-time financial dashboard tracking stock prices, trading volumes, and key market metrics with interactive visualizations.',
             url: 'https://github.com/kotashida/stock_market_dashboard',
             category: 'Data Engineering & Systems'
