@@ -60,12 +60,14 @@ body {
 
 /* Header & Navigation */
 header {
-    min-height: 90vh;
+    min-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     position: relative;
-    padding-top: 15vh; /* Raised from 20vh */
+    width: 100%;
 }
 
 nav {
@@ -138,16 +140,26 @@ h1 {
     font-size: 1.5rem;
     color: var(--text-secondary);
     max-width: 1000px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1.5rem;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.bio {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.8s forwards;
 }
@@ -193,10 +205,15 @@ section h2::after {
 
 /* About Section */
 #about {
-    padding: 0 0 4rem;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-#about p {
+.bio-text {
     font-size: 1.25rem;
     color: var(--text-secondary);
     text-align: center;
@@ -369,14 +386,13 @@ section h2::after {
 
 /* Contact Section */
 #contact {
-    min-height: 90vh;
+    min-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     text-align: center;
     background: transparent;
-    padding-top: 15vh; /* Raised from 20vh */
 }
 
 #contact a {
@@ -431,10 +447,7 @@ footer {
         font-size: 3rem;
     }
     
-    header {
-        height: auto;
-        padding: 4rem 0;
-    }
+    /* Removed header override to preserve centering */
     
     nav ul {
         gap: 1rem;

@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Grouping views for easy management
     const views = {
-        'home': [heroSection, aboutSection],
+        'home': [heroSection],
+        'about': [aboutSection],
         'projects': [projectsSection],
         'skills': [skillsSection],
         'contact': [contactSection]
@@ -25,8 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // 2. Show target view
         const targetElements = views[targetId];
         targetElements.forEach(el => {
-            el.style.display = 'block';
-            // Use setTimeout to allow display:block to apply before opacity transition
+            // Check if the element should be flex (Header, About, Contact) or block (Projects, Skills)
+            if (el.tagName === 'HEADER' || el.id === 'about' || el.id === 'contact') {
+                el.style.display = 'flex';
+            } else {
+                el.style.display = 'block';
+            }
+            
+            // Use setTimeout to allow display to apply before opacity transition
             setTimeout(() => el.classList.add('fade-in'), 10);
         });
 
@@ -57,6 +64,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Existing Project Filtering Logic ---
     const projects = [
+        {
+            name: 'Bone Fracture Detection: Computer Vision & Quantitative Analysis',
+            description: 'A sophisticated Computer Vision system utilizing YOLOv8 and statistical evaluation metrics (mAP, IoU) to automate the detection and localization of bone fractures in X-ray imagery.',
+            url: 'https://github.com/kotashida/bone_fracture_detection',
+            category: 'Machine Learning'
+        },
+        {
+            name: 'Scalable Medical Imaging Analytics Pipeline',
+            description: 'A high-performance, local-first ETL pipeline and analytical dashboard for medical imaging (DICOM) data, utilizing DuckDB for efficient metadata querying and Streamlit for volumetric visualization.',
+            url: 'https://github.com/kotashida/medical_imaging_analysis',
+            category: 'Data Engineering & Systems'
+        },
         {
             name: 'Enterprise IT Portfolio Risk Dashboard',
             description: 'A quantitative risk analytics framework evaluating the U.S. Federal IT Portfolio using Earned Value Management (EVM) and stochastic simulation to identify capital at risk.',
