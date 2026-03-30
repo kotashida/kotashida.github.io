@@ -4,42 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kota Shida | Data Portfolio</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
         <div class="container">
             <ul>
-                <li><a href="#" class="nav-tab active" data-target="home">Home</a></li>
-                <li><a href="#" class="nav-tab" data-target="about">About</a></li>
-                <li><a href="#" class="nav-tab" data-target="projects">Projects</a></li>
-                <li><a href="#" class="nav-tab" data-target="skills">Skills</a></li>
-                <li><a href="#" class="nav-tab" data-target="contact">Contact</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <header>
+    <!-- Sidebars -->
+    <div class="sidebar sidebar-left">
+        <div class="sidebar-content">
+            <a href="https://github.com/kotashida" target="_blank" title="GitHub"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub"></a>
+            <a href="https://linkedin.com/in/kotashida" target="_blank" title="LinkedIn"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn"></a>
+            <div class="line"></div>
+        </div>
+    </div>
+
+    <div class="sidebar sidebar-right">
+        <div class="sidebar-content">
+            <a href="mailto:shidak975@gmail.com" class="vertical-email">shidak975@gmail.com</a>
+            <div class="line"></div>
+        </div>
+    </div>
+
+    <header id="hero">
         <div class="container hero-content">
             <h1>Kota Shida</h1>
-            <p class="tagline">Modeling complex systems and extracting insights to solve problems with data.</p>
-            <div class="social-links">
-                <a href="https://github.com/kotashida" target="_blank" title="GitHub"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub"></a>
-                <a href="https://linkedin.com/in/kotashida" target="_blank" title="LinkedIn"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn"></a>
-            </div>
+            <p class="tagline">Statistics & Data Science @ UCLA</p>
+            <p class="bio-text">
+                Modeling complex systems and extracting insights to solve problems with data. 
+                My work sits at the intersection of quantitative finance, machine learning, and geospatial analysis.
+            </p>
         </div>
     </header>
 
-    <section id="about" class="hidden">
+    <section id="projects">
         <div class="container">
-            <h2>About Me</h2>
-            <p class="bio-text">I am majoring in Statistics and Data Science at UCLA. My work sits at the intersection of quantitative finance, machine learning, and geospatial analysis. I am passionate about applying statistical rigor to build data-driven solutions with real-world impact.</p>
-        </div>
-    </section>
-
-    <section id="projects" class="hidden">
-        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
             <div class="tabs">
                 <button class="tab-button active" data-category="Machine Learning">Machine Learning</button>
                 <button class="tab-button" data-category="Natural Language Processing">Natural Language Processing</button>
@@ -50,95 +58,74 @@
             <div id="project-grid-container" class="project-grid">
                 <!-- Project cards will be dynamically inserted here -->
             </div>
-        </div>
-    </section>
 
-    <section id="skills" class="hidden">
-        <div class="container">
+            <h2 class="section-title competencies-title">Core Competencies</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Programming & Core Technologies</h3>
+                    <h3>AI & Machine Learning</h3>
                     <ul>
-                        <li><strong>Languages:</strong> Python, R, SQL (Advanced: CTEs, Window Functions)</li>
-                        <li><strong>Version Control:</strong> Git, GitHub</li>
-                        <li><strong>Development Tools:</strong> Jupyter Notebooks, VS Code</li>
-                        <li><strong>Cloud & DevOps:</strong> Docker, Docker Compose</li>
+                        <li><strong>Frameworks:</strong> Scikit-learn, PyTorch, TensorFlow, Keras, YOLOv8</li>
+                        <li><strong>Specializations:</strong> NLP, Generative AI (RAG), Computer Vision</li>
+                        <li><strong>Analysis:</strong> Statistical Modeling, Causal Inference, MLOps</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Data Science & Machine Learning</h3>
+                    <h3>Data & Software Engineering</h3>
                     <ul>
-                        <li><strong>Data Manipulation:</strong> Pandas, NumPy</li>
-                        <li><strong>Data Visualization:</strong> Matplotlib, Seaborn, Plotly, Dash, Streamlit, Grafana</li>
-                        <li><strong>Statistical Modeling:</strong> SciPy, Statsmodels, Causal Inference (Difference-in-Differences)</li>
-                        <li><strong>Machine Learning:</strong> Scikit-learn, HDBSCAN, UMAP</li>
-                        <li><strong>Generative AI:</strong> Retrieval-Augmented Generation (RAG), AI Agents (LangChain), Vector Search (FAISS)</li>
-                        <li><strong>Deep Learning:</strong> TensorFlow, Keras, PyTorch, Hugging Face Transformers</li>
-                        <li><strong>Computer Vision:</strong> YOLOv8, Object Detection (mAP, IoU), Transfer Learning</li>
-                        <li><strong>Medical Imaging:</strong> DICOM Standards, pydicom, scikit-image, 3D Volumetric Analysis</li>
-                        <li><strong>Natural Language Processing (NLP):</strong> Sentiment Analysis, Topic Modeling (BERTopic), Transformers</li>
-                        <li><strong>MLOps:</strong> Weights & Biases, Model Training Pipelines</li>
+                        <li><strong>Languages:</strong> Python, R, SQL, Web3.py</li>
+                        <li><strong>Systems:</strong> FastAPI, Docker, Microservices, Data Pipelines</li>
+                        <li><strong>Databases:</strong> DuckDB, InfluxDB, Prometheus, SQLite, Parquet</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Quantitative Finance & Analytics</h3>
+                    <h3>Quantitative Finance</h3>
                     <ul>
-                        <li><strong>Financial Modeling:</strong> Monte Carlo Simulation, Option Pricing, Risk Management (VaR), EVM</li>
-                        <li><strong>Portfolio Optimization:</strong> MVO, Hierarchical Risk Parity (HRP)</li>
-                        <li><strong>Analysis:</strong> Web3 & RWA Analysis, Algorithmic Trading, Time-Series Forecasting (GARCH)</li>
-                        <li><strong>Data Sources:</strong> yfinance, ccxt, Financial APIs</li>
+                        <li><strong>Modeling:</strong> Monte Carlo, Option Pricing, Risk (VaR), EVM</li>
+                        <li><strong>Strategy:</strong> Portfolio Optimization, Algorithmic Trading</li>
+                        <li><strong>Analytics:</strong> Web3 & RWA Analysis, Time-Series (GARCH)</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Geospatial Analysis & Visualization</h3>
+                    <h3>Specialized Analytics</h3>
                     <ul>
-                        <li><strong>GIS Libraries:</strong> GeoPandas, Folium, OSMnx, GTFS-Kit</li>
-                        <li><strong>Spatial Data:</strong> GeoJSON, Shapefiles, GTFS Data</li>
-                        <li><strong>Techniques:</strong> Interactive Mapping, Spatial Joins, Geocoding, Network Analysis</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Software Engineering & Data Engineering</h3>
-                    <ul>
-                        <li><strong>API Development:</strong> FastAPI, RESTful APIs, Web3.py</li>
-                        <li><strong>System Design:</strong> Microservices, Data Pipelines, Message Queues (RabbitMQ, MQTT)</li>
-                        <li><strong>Databases:</strong> DuckDB (OLAP), InfluxDB, Prometheus, SQLite</li>
-                        <li><strong>Data Governance:</strong> Data Cleaning, Data Profiling, Data Quality Reporting, Parquet</li>
-                        <li><strong>Automation:</strong> Web Scraping (BeautifulSoup), Report Generation</li>
+                        <li><strong>Geospatial:</strong> GeoPandas, Folium, GIS, Interactive Mapping</li>
+                        <li><strong>Visualization:</strong> Plotly, Dash, Streamlit, Grafana</li>
+                        <li><strong>Medical:</strong> DICOM Standards, 3D Volumetric Analysis</li>
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3>Languages & Certifications</h3>
                     <ul>
-                        <li><strong>Human Languages:</strong> English (Native), Japanese (Native)</li>
-                        <li><strong>Certifications:</strong> Google Data Analytics Professional Certificate</li>
+                        <li><strong>Human Languages:</strong> English, Japanese (Native)</li>
+                        <li><strong>Credentials:</strong> Google Data Analytics Professional Certificate</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="hidden">
+    <section id="contact">
         <div class="container">
-            <h2 style="font-size: 3rem; margin-bottom: 2rem;">Let's Connect</h2>
-            <div class="contact-content" style="font-size: 1.2rem; line-height: 2;">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
                 <p>I am interested in new professional opportunities and open to discussing potential collaborations.</p>
-                <div style="margin: 2rem 0;">
-                    <p><strong>Email:</strong> <a href="mailto:shidak975@gmail.com" style="color: var(--accent-color);">shidak975@gmail.com</a></p>
-                    <p><strong>Phone:</strong> (408) 781-7012</p>
+                <div class="contact-details">
+                    <p><strong>Email:</strong> <a href="mailto:shidak975@gmail.com">shidak975@gmail.com</a></p>
+                    <p><strong>Phone:</strong> +1 (408) 781-7012</p>
                     <p><strong>Location:</strong> Los Angeles, CA</p>
-                </div>
-                <div class="social-links" style="margin-top: 1rem;">
-                    <a href="https://github.com/kotashida" target="_blank" title="GitHub"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub"></a>
-                    <a href="https://linkedin.com/in/kotashida" target="_blank" title="LinkedIn"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn"></a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
+        <div class="container">
+            <p>Kota Shida &mdash; 2026</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
+</body>
+</html>
 </body>
 </html>

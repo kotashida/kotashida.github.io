@@ -1,68 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // --- Main Navigation Tab Logic ---
-    const navTabs = document.querySelectorAll('.nav-tab');
-    const heroSection = document.querySelector('header');
-    const aboutSection = document.getElementById('about');
-    const projectsSection = document.getElementById('projects');
-    const skillsSection = document.getElementById('skills');
-    const contactSection = document.getElementById('contact');
-
-    // Grouping views for easy management
-    const views = {
-        'home': [heroSection],
-        'about': [aboutSection],
-        'projects': [projectsSection],
-        'skills': [skillsSection],
-        'contact': [contactSection]
-    };
-
-    function switchTab(targetId) {
-        // 1. Hide all views
-        Object.values(views).flat().forEach(el => {
-            el.style.display = 'none';
-            el.classList.remove('fade-in'); // Reset animation
-        });
-
-        // 2. Show target view
-        const targetElements = views[targetId];
-        targetElements.forEach(el => {
-            // Check if the element should be flex (Header, About, Contact) or block (Projects, Skills)
-            if (el.tagName === 'HEADER' || el.id === 'about' || el.id === 'contact') {
-                el.style.display = 'flex';
-            } else {
-                el.style.display = 'block';
-            }
-            
-            // Use setTimeout to allow display to apply before opacity transition
-            setTimeout(() => el.classList.add('fade-in'), 10);
-        });
-
-        // 3. Update Nav Active State
-        navTabs.forEach(tab => {
-            if (tab.dataset.target === targetId) {
-                tab.classList.add('active');
-            } else {
-                tab.classList.remove('active');
-            }
-        });
-
-        // 4. Reset Scroll
-        window.scrollTo(0, 0);
-    }
-
-    navTabs.forEach(tab => {
-        tab.addEventListener('click', (e) => {
-            e.preventDefault();
-            switchTab(tab.dataset.target);
-        });
-    });
-
-    // Initialize View (Show Home, Hide others)
-    // We manually hide others first to ensure clean start
-    Object.values(views).flat().forEach(el => el.style.display = 'none');
-    switchTab('home');
-
-    // --- Existing Project Filtering Logic ---
+    // --- Project Data ---
     const projects = [
         {
             name: 'Bone Fracture Detection: Computer Vision & Quantitative Analysis',
@@ -210,6 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
+    // --- Project Display Logic ---
     const projectContainer = document.getElementById('project-grid-container');
     const tabs = document.querySelectorAll('.tab-button');
 
@@ -248,34 +186,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initial display
-    displayProjects('Machine Learning');
+    displayProjects('Machine Learning'); // Initial display
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    // --- Smooth Scrolling ---
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // Offset for sticky nav
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
-    // Scroll Animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
+    // --- Scroll Active State (ScrollSpy) ---
+    const sections = document.querySelectorAll('header, section');
+    const navLinks = document.querySelectorAll('nav a');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                observer.unobserve(entry.target); // Only animate once
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 120)) {
+                current = section.getAttribute('id');
             }
         });
-    }, observerOptions);
 
-    document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
 });
